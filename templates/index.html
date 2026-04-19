@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Integral - Ebani</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; color: #333; text-align: center; padding: 20px; }
+        .container { background: white; max-width: 500px; margin: auto; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        img { max-width: 250px; margin-bottom: 20px; }
+        h2 { color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+        section { margin-bottom: 25px; padding: 15px; border: 1px solid #eee; border-radius: 8px; }
+        input, select, button { padding: 10px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        button { background-color: #003366; color: white; cursor: pointer; border: none; transition: 0.3s; }
+        button:hover { background-color: #0055aa; }
+        .result { font-weight: bold; font-size: 1.2em; color: #d32f2f; margin-top: 15px; padding: 10px; background: #ffebee; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="data:image/png;base64,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" alt="Logo TecMilenio">
+    
+    <h1>Calculadora Multi-función</h1>
+
+    {% if result is not none %}
+        <div class="result">Resultado: {{ result }}</div>
+    {% endif %}
+
+    <section>
+        <h2>Aritmética</h2>
+        <form method="POST">
+            <input type="hidden" name="type" value="arithmetic">
+            <input type="text" name="expression" placeholder="Ej: 5 * (10 + 2)" required>
+            <button type="submit">Calcular</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Binaria</h2>
+        <form method="POST">
+            <input type="hidden" name="type" value="binary">
+            <input type="number" name="num" placeholder="Número decimal" required>
+            <button type="submit">A Binario</button>
+        </form>
+    </section>
+
+    <section>
+        <h2>Lógica</h2>
+        <form method="POST">
+            <input type="hidden" name="type" value="logic">
+            <select name="val1">
+                <option value="True">Verdadero (True)</option>
+                <option value="False">Falso (False)</option>
+            </select>
+            <select name="op">
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+            </select>
+            <select name="val2">
+                <option value="True">Verdadero (True)</option>
+                <option value="False">Falso (False)</option>
+            </select>
+            <br>
+            <button type="submit">Validar Lógica</button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>
