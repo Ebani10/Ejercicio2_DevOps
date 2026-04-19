@@ -10,7 +10,7 @@ phases:
   post_build:
     commands:
       - echo Syncing log to S3...
-      - aws s3 cp backup.log s3://TU-NOMBRE-DE-BUCKET/
+      - aws s3 cp backup.log s3://ebani-act-devops/
 artifacts:
   files:
     - '**/*'
