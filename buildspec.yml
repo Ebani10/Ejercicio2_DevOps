@@ -1,0 +1,16 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  build:
+    commands:
+      - echo Building the project...
+      - pip install flask
+  post_build:
+    commands:
+      - echo Syncing log to S3...
+      - aws s3 cp backup.log s3://TU-NOMBRE-DE-BUCKET/
+artifacts:
+  files:
+    - '**/*'
