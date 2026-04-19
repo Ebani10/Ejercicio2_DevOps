@@ -1,0 +1,6 @@
+[2026-04-18] - Inicio de la actividad: Repositorio creado.
+[2026-04-18] - Prueba de calculadora aritmética: 5+5 = 10.
+[2026-04-18] - Sección lógica añadida correctamente.
+[2026-04-18] - Prueba de lógica: 5 > 3 es True.
+[2026-04-18] - Archivo buildspec.yml actualizado para sincronizar backup.log a S3.
+[2026-04-18] - Archivo app.py modificado para usar "a+" en lugar de "a" al escribir en backup.log.

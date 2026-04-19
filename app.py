@@ -6,6 +6,7 @@ app = Flask(__name__)
 def log_change(action):
     with open("backup.log", "a+") as f:
         f.write(f"[{datetime.datetime.now()}] - {action}\n")
+        f.flush()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
